@@ -1,5 +1,6 @@
 package com.example.whitepaw.a8ball;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +11,7 @@ import android.widget.TextView;
 
 public class My8BallActivity extends AppCompatActivity {
     EditText questionEditText;
-    TextView answerText;
+//    TextView answerText;
     Button shakeButton;
     Answers answers;
 
@@ -21,7 +22,7 @@ public class My8BallActivity extends AppCompatActivity {
         Log.d(getClass().toString(), "onCreate called");
 
         questionEditText = (EditText) findViewById(R.id.question_text);
-        answerText = (TextView) findViewById(R.id.answer_text);
+//        answerText = (TextView) findViewById(R.id.answer_text);
         shakeButton = (Button) findViewById(R.id.shake_button);
     }
 
@@ -30,7 +31,13 @@ public class My8BallActivity extends AppCompatActivity {
         String question = questionEditText.getText().toString();
         Log.d(getClass().toString(), "onShakeButtonClicked was called");
         Log.d(getClass().toString(), "The question asked was '" + question + "'");
-        answerText.setText(answers.getAnswer());
+        String answer = answers.getAnswer();
+
+//        answerText.setText(answers.getAnswer());
+
+        Intent intent = new Intent(this, AnswerActivity.class);
+        intent.putExtra("answer", answer);
+        startActivity(intent);
     }
 
 }

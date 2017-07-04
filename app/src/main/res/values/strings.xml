@@ -3,4 +3,5 @@
     <string name="alt_app_name">Code8ClanBalls</string>
     <string name="question">Ask a question</string>
     <string name="shake">Shake My Buns</string>
+    <string name="answer_activity_title">The 8Ball says...</string>
 </resources>
