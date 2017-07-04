@@ -8,6 +8,7 @@ import android.widget.TextView;
 public class AnswerActivity extends AppCompatActivity {
 
     TextView answerText;
+    TextView questionText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,10 +16,13 @@ public class AnswerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_answer);
 
         answerText = (TextView) findViewById(R.id.answer_text);
+        questionText = (TextView) findViewById(R.id.question_text);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
         String answer = extras.getString("answer");
+        String question = extras.getString("question");
+        questionText.setText(question);
         answerText.setText(answer);
     }
 }
