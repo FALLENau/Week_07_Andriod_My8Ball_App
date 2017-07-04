@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">8Ball</string>
+    <string name="alt_app_name">Code8ClanBalls</string>
+    <string name="question">Ask a question</string>
+    <string name="shake">Shake My Buns</string>
+</resources>

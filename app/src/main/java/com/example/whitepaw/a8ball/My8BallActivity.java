@@ -1,0 +1,36 @@
+package com.example.whitepaw.a8ball;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class My8BallActivity extends AppCompatActivity {
+    EditText questionEditText;
+    TextView answerText;
+    Button shakeButton;
+    Answers answers;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_my8_ball);
+        Log.d(getClass().toString(), "onCreate called");
+
+        questionEditText = (EditText) findViewById(R.id.question_text);
+        answerText = (TextView) findViewById(R.id.answer_text);
+        shakeButton = (Button) findViewById(R.id.shake_button);
+    }
+
+    public void onShakeButtonClicked(View Button) {
+        answers = new Answers();
+        String question = questionEditText.getText().toString();
+        Log.d(getClass().toString(), "onShakeButtonClicked was called");
+        Log.d(getClass().toString(), "The question asked was '" + question + "'");
+        answerText.setText(answers.getAnswer());
+    }
+
+}
